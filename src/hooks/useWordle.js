@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const useWorlde = (solution) => {
+const useWordle = (solution) => {
   const [turn, setTurn] = useState(0)
   const [currentGuess, setCurrentGuess] = useState('')
   const [guesses, setGuesses] = useState([]) // each guess is an array
@@ -18,9 +18,11 @@ const useWorlde = (solution) => {
 
   //handle keyup event & track current guess
   //if user presses enter, add the new guess
-  const handleKeyup = () => {}
+  const handleKeyup = ({ key }) => {
+    console.log(key)
+  }
 
   return { turn, currentGuess, guesses, isCorrect, handleKeyup }
 }
 
-export default useWorlde
+export default useWordle
