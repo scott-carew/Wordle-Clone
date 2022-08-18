@@ -19,6 +19,12 @@ const useWordle = (solution) => {
   //handle keyup event & track current guess
   //if user presses enter, add the new guess
   const handleKeyup = ({ key }) => {
+    if (key === 'Backspace') {
+      setCurrentGuess((prev) => {
+        return prev.slice(0, -1)
+      })
+      return
+    }
     //regex to ensure the if block only occurs if a user types a letter key
     if (/^[A-Za-z]$/.test(key)) {
       if (currentGuess.length < 5) {
